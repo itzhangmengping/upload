@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/css/matchadd.css" />
+    <script src="__PUBLIC__/js/jquery-2.1.4.min.js" ></script>
+    <script src="__PUBLIC__/js/upload/jquery.ui.widget.js"></script>
+    <script src="__PUBLIC__/js/upload/jquery.iframe-transport.js"></script>
+    <script src="__PUBLIC__/js/upload/jquery.fileupload.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="dd" style="display:inline-block;width:80px;height:80px;border:1px solid #ccc">
+    <img src="" width='100%' id="logo_img";>
+  </div><br><span class="LOGO_BTN">上传LOGO<input id="fileupload" type="file" name="files[]" data-url="__APP__/Match/upload" multiple></span></td>
+<script type="text/javascript">
+//文件上传
+$('#fileupload').fileupload({
+   dataType: 'json',
+   done: function (e,data) {
+     var path = data.result.img_url;
+     $('#logo_img').attr('src',path);
+   }
+});
+</script>
+  </body>
+</html>
